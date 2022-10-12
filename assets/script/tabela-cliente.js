@@ -29,6 +29,8 @@ function criarLinha(usuario){
     linha.appendChild(tdTelefone)
     linha.appendChild(tdDataNascimento)
 
+    linha.setAttribute("class", "row")
+
     return linha;
 
 }

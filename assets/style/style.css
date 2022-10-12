@@ -79,7 +79,38 @@ body{
     margin-top: 15%;
 }
 
-.container-table table,td{
-    border: 1px solid #000;
+#tabela,td{
+    height: 2em;
+    padding: 10px;
+}
+#tabela tr:nth-child(even){
+    background-color:#93a8ac;
+    color: #000;
 }
 
+#tabela tr:nth-child(even):hover{
+    background-color:#9ca9ac;
+}
+
+#tabela tr th{
+    font-weight: normal;
+}
+.row:hover{
+    background-color:#93a8ac;
+
+}
+#tabela{
+    background-color:#424B54;
+    box-shadow: 15px 15px 10px 5px rgba(4, 5, 10, 0.438);  
+    color: #fff;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-align: center;
+}
+
+.title{
+    height: 2em;
+}
+
+.subtitle th{
+    padding-right: 15px;
+}
