@@ -1,0 +1,85 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: rgb(216, 216, 216);
+}
+
+.container-crud{
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container-crud div{
+    background-color: #fff;
+    padding: 20px;
+    display: inline-block;
+    text-align: center;
+    border-radius: 20px;
+    box-shadow: 0px 2px 20px -5px rgb(4, 5, 10);
+    border: 1px solid #aaa;
+}
+.container-crud div button{
+    margin-bottom: 5px;
+    height: 4em;
+    width: 6.5em;
+    border-radius: 0.7em;
+    border: 0;
+    background-color: rgb(68, 79, 117);
+    color: #fff;
+}
+.container-crud div button:hover{
+    cursor: pointer;
+    background-color: rgb(32, 68, 201);
+    transition: 0.5s;
+}
+
+.container-crud div a{
+    text-decoration: none;
+}
+
+.container-opcoes{
+    display: flex;
+    justify-content: center;
+    margin-top: 15%;
+}
+
+.container-opcoes img{
+    height: 10em;
+}
+.cliente,.estoque,.atendente,.pedido{
+    transition: 1s;
+    background-color: #fff;
+    margin-right: 5em;
+    padding: 5em;
+    box-shadow: 30px 30px 20px 10px rgba(4, 5, 10, 0.438);    
+}
+
+.cliente p, .atendente p, .estoque p, .pedido p{
+    font-size: 2em;
+    text-align: center;
+}
+
+.container-opcoes a{
+    text-decoration: none;
+    color: #000;
+}
+
+.cliente:hover, .atendente:hover, .estoque:hover, .pedido:hover{
+    transition: 1s;
+    transform: translateY(-20px);
+}
+
+.container-table{
+    display: flex;
+    justify-content: center;
+    margin-top: 15%;
+}
+
+.container-table table,td{
+    border: 1px solid #000;
+}
+
