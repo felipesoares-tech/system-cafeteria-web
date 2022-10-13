@@ -13,7 +13,7 @@ function post(url, body){
     return request.responseText
 }
 
-function cadastrarEstoque(){
+function cadastrarProduto(){
     event.preventDefault()
     let url = "http://127.0.0.1:8080/produtos"
     let descricao = document.getElementById("descricao").value
@@ -23,7 +23,7 @@ function cadastrarEstoque(){
     console.log(quantidade)
 
     body = {
-    "valor_unitario":valorUnitario,
+    "valorUnitario":valorUnitario,
     "quantidade":quantidade,
     "nome":descricao,
     }
