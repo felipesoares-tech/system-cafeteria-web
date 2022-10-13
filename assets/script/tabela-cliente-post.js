@@ -21,8 +21,6 @@ function cadastrarCliente(){
     let email = document.getElementById("mail").value
     let telefone = document.getElementById("tel").value
     let dataNascimento = document.getElementById("date").value
-    console.log(nome)
-    console.log(email)
 
     body = {
     "cpf":cpf,
