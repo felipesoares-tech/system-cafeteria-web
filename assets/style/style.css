@@ -13,6 +13,7 @@ body{
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
+    flex-direction: column;
 }
 .container-crud div{
     background-color: #fff;
@@ -22,8 +23,9 @@ body{
     border-radius: 20px;
     box-shadow: 0px 2px 20px -5px rgb(4, 5, 10);
     border: 1px solid #aaa;
+    margin-top: 2em;
 }
-.container-crud div button{
+.container-crud div button, .btn-voltar{
     margin-bottom: 5px;
     height: 4em;
     width: 6.5em;
@@ -32,10 +34,20 @@ body{
     background-color: rgb(68, 79, 117);
     color: #fff;
 }
-.container-crud div button:hover{
+.btn-voltar{
+    margin-top: 0.5em;
+    height: 2.5em;
+}
+.container-crud div button:hover, .btn-voltar:hover{
     cursor: pointer;
-    background-color: rgb(32, 68, 201);
+    background-color: rgb(96, 109, 163);
     transition: 0.5s;
+}
+
+.container-crud div h2{
+    margin-bottom: 1em;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 28px;
 }
 
 .container-crud div a{
@@ -161,4 +173,53 @@ body{
     cursor: pointer;
     background-color: rgb(32, 68, 201);
     transition: 0.5s;
+}
+
+header{
+    height: 5em;
+    background-color:#2b3748;
+    display: flex;
+    justify-content: center;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 20px;
+}
+
+.container-menu{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.menu{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    list-style: none;
+}
+
+.menu img{
+    height: 3em;
+}
+
+.li-container-img{
+    padding-top: 9px;
+}
+
+
+.menu li a{
+    color: #fff;
+    text-decoration: none;
+    padding: 0 10px;
+}
+.menu li ul li{
+    display: inline-block;
+    margin: 0;
+}
+
+.menu li a:hover{
+    color: #6188ff;
+}
+h2{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 2em;
 }
