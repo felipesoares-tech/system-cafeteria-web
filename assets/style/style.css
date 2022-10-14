@@ -248,9 +248,13 @@ h2{
     box-shadow: 30px 30px 20px 10px rgba(4, 5, 10, 0.438);    
 }
 
-.container-items input, .descricao select{
+.container-items input{
     height: 2em;
     padding: 1em;
+    margin-bottom: 1em;
+}
+.descricao select{
+    height: 2.3em;
     margin-bottom: 1em;
 }
 .inserir button{
