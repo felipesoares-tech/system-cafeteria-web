@@ -248,11 +248,11 @@ h2{
     box-shadow: 30px 30px 20px 10px rgba(4, 5, 10, 0.438);    
 }
 
-.container-items{
-    display: flex;
+#combo-produto{
+    color: #000;
 }
 
-.container-items input, .container-descricao select{
+.container-items input, .descricao select{
     height: 2em;
     padding: 1em;
     margin-bottom: 1em;
@@ -265,7 +265,6 @@ h2{
     color: #fff;
     border: 1px solid #000;
 }
-
 
 .inserir button:hover{
     cursor: pointer;
@@ -283,7 +282,7 @@ h2{
     margin-bottom: 0.5em;
 }
 
-.container-descricao,.container-items,.preco-unitario,.valor-final,.inserir,.qtd{
+.container-items,.preco-unitario,.valor-final,.inserir,.qtd,.descricao{
     display: flex;
     flex-direction: column;
 }
