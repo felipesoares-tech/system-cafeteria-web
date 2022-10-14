@@ -22,21 +22,45 @@
     <div class="container-pedido">
         <main>
             <div class="box-interna">
-                <label for="">Atendente</label>
-                <select name="combo-atendente" id="combo-atendente">
-                    <option value="1">Teste</option>
-                    <option value="2">Outro</option>
-                </select>
-                <label for="">Cliente</label>
-                <select name="combo-cliente" id="combo-cliente">
-                    <option value="1">Alguem</option>
-                    <option value="2">Outro</option>
-                </select>
-                <label for="">Pedido</label>
-                <select name="combo-pedido" id="combo-pedido">
+                <div class="container-descricao">
+                    <label for="combo-produto">Produto</label>
+                <select name="combo-pedido" id="combo-produto">
                     <option value="1">teste</option>
                     <option value="2">outro</option>
                 </select>
+                </div>
+                <div class="container-items">
+                    <div class="qtd">
+                        <label for="qtd">Quantidade</label>
+                        <input type="number" name="" id="qtd">
+                    </div>
+                    <div class="preco-unitario">
+                        <label>Preço Unitário</label>
+                        <input type="text" name="" id="" disabled>
+                    </div>
+                    <div class="valor-final">
+                        <label>Total</label>
+                        <input type="text" name="" id="" disabled>
+                    </div>
+                    <div class="inserir">
+                        <button>Inserir</button>
+                    </div>
+                </div>
+
+                <section class="container-table">
+                    <table id="tabela-item">
+                        <tbody>
+                            <tr class="subtitle">
+                                <th>Item</th>
+                                <th>Qtd</th>
+                                <th>Vlr Unit</th>
+                                <th>Vlr Total</th>
+                            </tr>
+                        </tbody>
+                    </table>
+                </section>
+
+
             </div>
         </main>
     </div>

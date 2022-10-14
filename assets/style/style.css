@@ -122,7 +122,6 @@ body{
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     text-align: center;
 }
-
 .title{
     height: 2em;
 }
@@ -239,16 +238,52 @@ h2{
 .box-interna{
     display: flex;
     flex-direction: column;
-    height: 10em;
-    width: 20em;
+    background-color: #fff;
+    width: 35em;
+    text-align: center;
+    padding: 3em;
+    background-color:#424B54;
+    color: #fff;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    box-shadow: 30px 30px 20px 10px rgba(4, 5, 10, 0.438);    
 }
 
-.container-pedido main{
-   background-color: #fff;
-   padding: 2em;
-    
+.container-items{
+    display: flex;
 }
 
-.container-pedido main select{
+.container-items input, .container-descricao select{
     height: 2em;
+    padding: 1em;
+    margin-bottom: 1em;
+}
+.inserir button{
+    height: 3em;
+    margin-top: 1.5em;
+    margin-bottom: 1em;
+    background-color: rgb(68, 79, 117);
+    color: #fff;
+    border: 1px solid #000;
+}
+
+
+.inserir button:hover{
+    cursor: pointer;
+    background-color: rgb(64, 77, 124);
+    transition: 0.5s;
+}
+
+#tabela-item{
+    text-align: center;
+    background-color:#353b41;
+    padding: 0.5em;
+}
+
+.box-interna label{
+    margin-bottom: 0.5em;
+}
+
+.container-descricao,.container-items,.preco-unitario,.valor-final,.inserir,.qtd{
+    display: flex;
+    flex-direction: column;
 }
