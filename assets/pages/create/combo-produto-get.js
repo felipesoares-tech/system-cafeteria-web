@@ -8,18 +8,17 @@ function get(url) {
 function criarOption(produto) {
     console.log(produto)
     let option = document.createElement("option")
+
     option.setAttribute('value', `${produto.id}`);
-    text = document.createTextNode(`ID: ${produto.id} NOME: ${produto.nome.toUpperCase()}`)
+    text = document.createTextNode(`${produto.nome.toUpperCase()}`)
     option.appendChild(text)
 
     return option;
-
 }
 
 function main() {
     data = get("http://127.0.0.1:8080/produtos")
     produtos = JSON.parse(data)
-    console.log(produtos)
     let select = document.getElementById("combo-produto")
     produtos.forEach(element => {
         let option = criarOption(element)
@@ -27,24 +26,48 @@ function main() {
     })
 }
 
+function buscaPreco(id){
+    data = get(`http://127.0.0.1:8080/produtos/${id}`)
+    let produto = JSON.parse(data)
+    return produto.valorUnitario
+}
+function buscaQtd(id){
+    data = get(`http://127.0.0.1:8080/produtos/${id}`)
+    let produto = JSON.parse(data)
+    return produto.quantidade
+}
 
-function buscaId() {
-    let select = document.getElementById("combo-produto")
-    var idProduto = '';
-    select.onchange = function () {
-        idProduto = this.value;
-        console.log(idProduto)
-        
-        
-
-    }
+function preenchePedido() {
+    var select = document.getElementById("combo-produto")
+    var inputVlrUnitario = document.getElementById("vlr-unitario")
+    var inputVlrTotal = document.getElementById("vlr-final")
+    var inputQtd = document.getElementById('qtd')
     
- 
+    var idProduto = select.value;
+    var vlrUnitario = buscaPreco(idProduto)
+    var qtd = buscaQtd(idProduto)
 
+        inputQtd.onchange = function (){
+            inputVlrTotal.value = (vlrUnitario* inputQtd.value)
+    }
+
+    /*Preenchendo os inputs*/ 
+    inputVlrUnitario.value = vlrUnitario
+
+    select.onchange = function () { /*Funções a executar quando o select sofrer alguma alteração */
+        idProduto = this.value;
+
+        /*Buscando valor unitário e quantidade do produto quando o select é alterado */
+        vlrUnitario = buscaPreco(idProduto)
+        qtd = buscaQtd(idProduto)
+
+        /*Preenchendo os inputs*/ 
+        inputVlrUnitario.value = vlrUnitario
+        inputVlrTotal.value = (vlrUnitario* inputQtd.value)
+        
+        }
 }
 
 main()
-buscaId()
-
-
+preenchePedido()
 

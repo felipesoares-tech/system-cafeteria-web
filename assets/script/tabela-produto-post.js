@@ -19,8 +19,8 @@ function cadastrarProduto(){
     let descricao = document.getElementById("descricao").value
     let quantidade = document.getElementById("quantidade").value
     let valorUnitario = document.getElementById("valor").value
-    console.log(descricao)
-    console.log(quantidade)
+    valorUnitario.value = parseFloat(valorUnitario.value).toFixed(2)
+    console.log(valorUnitario)
 
     body = {
     "valorUnitario":valorUnitario,
