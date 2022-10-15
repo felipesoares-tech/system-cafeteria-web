@@ -20,7 +20,9 @@ function criarLinha(usuario){
     tdId.innerHTML = usuario.id
     tdEmail.innerHTML = usuario.email
     tdTelefone.innerHTML = usuario.telefone
-    tdDataNascimento.innerHTML = usuario.dataNascimento  
+
+    data = new Date(usuario.dataNascimento)
+    tdDataNascimento.innerHTML = data.toLocaleDateString('pt-BR', {timeZone: 'UTC'}) 
 
     linha.appendChild(tdId)
     linha.appendChild(tdNome)
