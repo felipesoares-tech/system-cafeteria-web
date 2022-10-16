@@ -6,11 +6,15 @@ function post(url, body){
     request.setRequestHeader("Content-type","application/json")
     request.send(JSON.stringify(body))
 
-    request.onload = function (){
-        console.log(this.responseText)
-    }
+    request.addEventListener("load", function() {
+        if (request.status == 201) 
+            alert('Cliente cadastrado com sucesso!')
+         else 
+            alert('Erro ao cadastrar o cliente =(')
+    });
+    let form = document.getElementById("form-produtos")
+    form.reset()
 
-    return request.responseText
 }
 
 function cadastrarCliente(){

@@ -6,11 +6,16 @@ function post(url, body){
     request.setRequestHeader("Content-type","application/json")
     request.send(JSON.stringify(body))
 
-    request.onload = function (){
-        console.log(this.responseText)
-    }
+    request.addEventListener("load", function() {
+        if (request.status == 201) 
+            alert('Atendente cadastrado com sucesso!')
+         else 
+            alert('Erro ao cadastrar o atendente =(')
+    });
+    let form = document.getElementById("form-produtos")
+    form.reset()
 
-    return request.responseText
+    
 }
 
 function cadastrarCliente(){
