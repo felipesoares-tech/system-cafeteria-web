@@ -14,7 +14,6 @@ function post(url, body){
     });
     let form = document.getElementById("form-produtos")
     form.reset()
-
 }
 
 function cadastrarCliente(){
@@ -25,11 +24,14 @@ function cadastrarCliente(){
     let email = document.getElementById("mail").value
     let telefone = document.getElementById("tel").value
     let dataNascimento = document.getElementById("date").value
+    
+    const numTelefone = telefone.replace(/[^0-9]/g, '')
+    const numCpf = cpf.replace(/[^0-9]/g, '')
 
     body = {
-    "cpf":cpf,
+    "cpf":numCpf,
     "nome":nome,
-    "telefone":telefone,
+    "telefone":numTelefone,
     "email":email,
     "dataNascimento":dataNascimento
     }

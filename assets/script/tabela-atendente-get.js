@@ -22,6 +22,9 @@ function criarLinha(usuario){
     tdTelefone.innerHTML = usuario.telefone
     tdDataNascimento.innerHTML = usuario.dataNascimento  
 
+    data = new Date(usuario.dataNascimento)
+    tdDataNascimento.innerHTML = data.toLocaleDateString('pt-BR', {timeZone: 'UTC'}) 
+
     linha.appendChild(tdId)
     linha.appendChild(tdNome)
     linha.appendChild(tdCpf)
