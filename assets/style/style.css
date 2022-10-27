@@ -20,12 +20,12 @@ body{
     padding: 20px;
     display: inline-block;
     text-align: center;
-    border-radius: 20px;
+    border-radius: 10px;
     box-shadow: 0px 2px 20px -5px rgb(4, 5, 10);
     border: 1px solid #aaa;
     margin-top: 2em;
 }
-.container-crud div button, .btn-voltar{
+.container-crud div button{
     margin-bottom: 5px;
     height: 4em;
     width: 6.5em;
@@ -34,8 +34,17 @@ body{
     background-color: rgb(68, 79, 117);
     color: #fff;
 }
+
 .btn-voltar{
-    margin-top: 0.5em;
+    margin-bottom: 5px;
+    height: 4em;
+    width: 6.5em;
+    border: 0;
+    background-color: rgb(68, 79, 117);
+    color: #fff;
+}
+
+.btn-voltar{
     height: 2.5em;
 }
 .container-crud div button:hover, .btn-voltar:hover{
@@ -66,27 +75,32 @@ body{
 .container-opcoes img{
     height: 10em;
 }
-.cliente,.estoque,.atendente,.pedido{
+
+.container-opcoes div{
+    padding: 15px;
+    margin-right: 12px;
+}
+
+.container-opcoes div a div{
     transition: 1s;
     background-color: #fff;
-    margin-right: 5em;
-    padding: 5em;
+    padding: 80px;
     box-shadow: 30px 30px 20px 10px rgba(4, 5, 10, 0.438);    
 }
 
-.cliente p, .atendente p, .estoque p, .pedido p{
+.container-opcoes div a div p{
     font-size: 2em;
     text-align: center;
 }
 
-.container-opcoes a{
+.container-opcoes div a{
     text-decoration: none;
     color: #000;
 }
 
-.cliente:hover, .atendente:hover, .estoque:hover, .pedido:hover{
+.container-opcoes div a div:hover{
     transition: 1s;
-    transform: translateY(-20px);
+    transform: translateY(-15px);
 }
 
 .container-table{
