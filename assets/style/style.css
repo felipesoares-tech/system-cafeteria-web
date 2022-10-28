@@ -301,3 +301,8 @@ h2{
     flex-direction: column;
 }
 
+.container-form div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
