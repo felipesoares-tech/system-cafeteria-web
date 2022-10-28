@@ -13,11 +13,19 @@ function criarLinha(produto){
     tdValorUnitario = document.createElement("td")
     tdSubTotal = document.createElement("td")
 
+    let quantidade = document.getElementById('qtd')
+    let valorTotal = document.getElementById('vlr-final')
+
+    if(quantidade.value < 1){
+        alert('Informe a quantidade!')
+        return -1
+    }
+
     tdId.innerHTML = produto.id
     tdNome.innerHTML = produto.nome
-    tdQuantidade.innerHTML = document.getElementById('qtd').value
+    tdQuantidade.innerHTML = quantidade.value
     tdValorUnitario.innerHTML = produto.valorUnitario
-    tdSubTotal.innerHTML = document.getElementById('vlr-final').value
+    tdSubTotal.innerHTML = valorTotal.value
 
     linha.appendChild(tdId)
     linha.appendChild(tdNome)
@@ -35,8 +43,8 @@ function inserirItem(){
     let id = select.value
     data = get(`http://127.0.0.1:8080/produtos/${id}`)
     let produto = JSON.parse(data)
-
     let linha = criarLinha(produto)
-    tabela.appendChild(linha)
+    if(linha != -1)
+        tabela.appendChild(linha)
     
 }
