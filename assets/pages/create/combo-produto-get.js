@@ -10,6 +10,7 @@ function criarOption(produto) {
     let option = document.createElement("option")
 
     option.setAttribute('value', `${produto.id}`);
+    option.setAttribute('id', `${produto.id}`)
     text = document.createTextNode(`${produto.nome.toUpperCase()}`)
     option.appendChild(text)
 

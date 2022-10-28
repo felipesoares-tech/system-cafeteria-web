@@ -43,17 +43,23 @@
                         <input type="text" name="" id="vlr-final" readonly>
                     </div>
                     <div class="inserir">
-                        <button>Inserir</button>
+                        <button onclick="inserirItem()">Inserir</button>
                     </div>
                 </div>
                 <section class="container-table">
                     <table id="tabela-item">
+                        <thead>
+                            <tr>
+                                <th class="title" colspan="6">Itens</th>
+                            </tr>
+                        </thead>
                         <tbody>
                             <tr class="subtitle">
-                                <th>Item</th>
+                                <th>Id</th>
+                                <th>Nome</th>
                                 <th>Qtd</th>
                                 <th>Vlr Unit</th>
-                                <th>Vlr Total</th>
+                                <th>Sub total</th>
                             </tr>
                         </tbody>
                     </table>
@@ -62,5 +68,6 @@
         </main>
     </div>
     <script src="combo-produto-get.js"></script>
+    <script src="inserir-item.js"></script>
 </body>
 </html>
