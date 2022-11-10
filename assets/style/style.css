@@ -103,10 +103,12 @@ body{
     transform: translateY(-15px);
 }
 
-.container-table{
-    display: flex;
-    justify-content: center;
-    margin-top: 15%;
+.box-itens{
+    top: 0;
+    right: 0;
+    color: #fff;
+    margin-right: 7%;
+
 }
 
 #tabela,td{
@@ -241,15 +243,18 @@ h2{
     font-size: 2em;
 }
 
-.container-pedido{
-    min-height: 100vh;
+main{
     display: flex;
     justify-content: center;
-    align-items: center;
     flex-wrap: wrap;
+    margin-top: 10%;
 }
 
-.box-interna{
+.teste{
+    position: relative;
+}
+
+.box-pedido{
     display: flex;
     flex-direction: column;
     background-color: #fff;
@@ -262,7 +267,7 @@ h2{
     box-shadow: 30px 30px 20px 10px rgba(4, 5, 10, 0.438);    
 }
 
-.container-items input{
+.box-pedido input{
     height: 2em;
     padding: 1em;
     margin-bottom: 1em;
@@ -271,7 +276,7 @@ h2{
     height: 2.3em;
     margin-bottom: 1em;
 }
-.inserir button{
+.botoes button{
     height: 3em;
     margin-top: 1.5em;
     margin-bottom: 1em;
@@ -280,7 +285,7 @@ h2{
     border: 1px solid #000;
 }
 
-.inserir button:hover{
+.botoes button:hover{
     cursor: pointer;
     background-color: rgb(64, 77, 124);
     transition: 0.5s;
@@ -292,11 +297,11 @@ h2{
     padding: 0.5em;
 }
 
-.box-interna label{
+.box-pedido label{
     margin-bottom: 0.5em;
 }
 
-.container-items,.preco-unitario,.valor-final,.inserir,.qtd,.descricao{
+.preco-unitario,.valor-final,.botoes,.qtd,.descricao{
     display: flex;
     flex-direction: column;
 }

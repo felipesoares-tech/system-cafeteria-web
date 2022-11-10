@@ -14,60 +14,66 @@
     <header>
         <div class="container-menu">
             <ul class="menu">
-                <li class="li-container-img"><a href="#"><img src="../../../assets/img/logo-menu.png" alt="logo sistema"></a></li>
+                <li class="li-container-img"><a href="#"><img src="../../../assets/img/logo-menu.png"
+                            alt="logo sistema"></a></li>
                 <li><a href="../../../index.html">Home</a></li=>
                 <li><a href="#">Sobre</a></li=>
                 <li><a href="#">Contato</a></li=>
             </ul>
         </div>
     </header>
-    <div class="container-pedido">
+    <div class="teste">
         <main>
-            <div class="box-interna">
-                <div class="container-items">
-                    <div class="descricao">
-                        <label for="combo-produto">Produto</label>
-                        <select id="combo-produto">
-                        </select>
-                    </div>
-                    <div class="qtd">
-                        <label for="qtd">Quantidade</label>
-                        <input type="number" name="" id="qtd">
-                    </div>
-                    <div class="preco-unitario">
-                        <label>Preço Unitário</label>
-                        <input type="text" name="" id="vlr-unitario" readonly>
-                    </div>
-                    <div class="valor-final">
-                        <label>Total</label>
-                        <input type="text" name="" id="vlr-final" readonly>
-                    </div>
-                    <div class="inserir">
-                        <button onclick="inserirItem()">Inserir</button>
-                    </div>
+            <div class="box-pedido">
+                <div class="descricao">
+                    <label for="combo-produto">Produto</label>
+                    <select id="combo-produto">
+                    </select>
                 </div>
-                <section class="container-table">
-                    <table id="tabela-item">
-                        <thead>
-                            <tr>
-                                <th class="title" colspan="6">Itens</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr class="subtitle">
-                                <th>Id</th>
-                                <th>Nome</th>
-                                <th>Qtd</th>
-                                <th>Vlr Unit</th>
-                                <th>Sub total</th>
-                            </tr>
-                        </tbody>
-                    </table>
-                </section>
+                <div class="qtd">
+                    <label for="qtd">Quantidade</label>
+                    <input type="number" name="" id="qtd">
+                </div>
+                <div class="preco-unitario">
+                    <label>Preço Unitário</label>
+                    <input type="text" name="" id="vlr-unitario" readonly>
+                </div>
+                <div class="valor-final">
+                    <label>Total</label>
+                    <input type="text" name="" id="vlr-final" readonly>
+                </div>
+                <div class="botoes">
+                    <button onclick="inserirItem()">Inserir</button>
+                    <button>Remover</button>
+                    <button>Finalizar</button>
+                </div>
+            </div>
+
+            <div class="box-itens">
+                <h2>Valor total: </h2>
+                <table id="tabela-item">
+                    <thead>
+                        <tr>
+                            <th class="title" colspan="6">Itens</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="subtitle">
+                            <th>Id</th>
+                            <th>Nome</th>
+                            <th>Qtd</th>
+                            <th>Vlr Unit</th>
+                            <th>Sub total</th>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
         </main>
     </div>
+
+
     <script src="combo-produto-get.js"></script>
     <script src="inserir-item.js"></script>
 </body>
+
 </html>

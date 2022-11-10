@@ -13,7 +13,7 @@ function mtel(v){
     return v;
 }
 function id( el ){
-	return document.getElementById( el );
+	return document.getElementById( el )
 }
 window.onload = function(){
     const input = id('cpf')
