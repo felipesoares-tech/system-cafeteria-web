@@ -9,8 +9,10 @@ function post(url, body){
     request.addEventListener("load", function() {
         if (request.status == 201) 
             alert('Cliente cadastrado com sucesso!')
-         else 
-            alert('Erro ao cadastrar o cliente =(')
+         else{
+            alert(`${JSON.parse(request.response).mensagem}`)
+         } 
+            
     });
     let form = document.getElementById("form-produtos")
     form.reset()
