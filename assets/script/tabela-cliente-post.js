@@ -4,13 +4,14 @@ function post(url, body){
     let request = new XMLHttpRequest()
     request.open("POST",url,true)
     request.setRequestHeader("Content-type","application/json")
+    request.responseType('Content-type','application/json')
     request.send(JSON.stringify(body))
 
     request.addEventListener("load", function() {
         if (request.status == 201) 
             alert('Cliente cadastrado com sucesso!')
          else{
-            alert(`${JSON.parse(request.response).mensagem}`)
+            alert(`${request.mensagem}`)
          } 
             
     });
