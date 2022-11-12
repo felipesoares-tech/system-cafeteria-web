@@ -3,13 +3,14 @@ function post(url, body){
     let request = new XMLHttpRequest()
     request.open("POST",url,true)
     request.setRequestHeader("Content-type","application/json")
+    request.responseType = 'json'
     request.send(JSON.stringify(body))
 
     request.addEventListener("load", function() {
         if (request.status == 201) 
             alert('Produto cadastrado com sucesso!')
          else 
-            alert('Erro ao cadastrar o produto =(')
+            alert(`${request.response.mensagem}`)
     });
     let form = document.getElementById("form-produtos")
     form.reset()
