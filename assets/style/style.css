@@ -104,11 +104,14 @@ body{
 }
 
 .box-itens{
-    top: 0;
-    right: 0;
     color: #fff;
-    margin-right: 7%;
+    position: absolute;
+    top: 0;
+    margin-top: 7%;
+}
 
+#tabela-item{
+    max-width: 50%;
 }
 
 #tabela,td{
@@ -248,11 +251,6 @@ main{
     flex-wrap: wrap;
     margin-top: 10%;
 }
-
-.teste{
-    position: relative;
-}
-
 .box-pedido{
     display: flex;
     flex-direction: column;

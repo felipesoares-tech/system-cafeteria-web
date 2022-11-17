@@ -22,53 +22,50 @@
             </ul>
         </div>
     </header>
-    <div class="teste">
-        <main>
-            <div class="box-pedido">
-                <div class="descricao">
-                    <label for="combo-produto">Produto</label>
-                    <select id="combo-produto">
-                    </select>
-                </div>
-                <div class="qtd">
-                    <label for="qtd">Quantidade</label>
-                    <input type="number" name="" id="qtd">
-                </div>
-                <div class="preco-unitario">
-                    <label>Preço Unitário</label>
-                    <input type="text" name="" id="vlr-unitario" readonly>
-                </div>
-                <div class="valor-final">
-                    <label>Total</label>
-                    <input type="text" name="" id="vlr-final" readonly>
-                </div>
-                <div class="botoes">
-                    <button onclick="inserirItem()">Inserir</button>
-                    <button>Remover</button>
-                    <button>Finalizar</button>
-                </div>
+    <main>
+        <div class="box-pedido">
+            <div class="descricao">
+                <label for="combo-produto">Produto</label>
+                <select id="combo-produto">
+                </select>
             </div>
-
-            <div class="box-itens">
-                <h2>Valor total: </h2>
-                <table id="tabela-item">
-                    <thead>
-                        <tr>
-                            <th class="title" colspan="6">Itens</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr class="subtitle">
-                            <th>Id</th>
-                            <th>Nome</th>
-                            <th>Qtd</th>
-                            <th>Vlr Unit</th>
-                            <th>Sub total</th>
-                        </tr>
-                    </tbody>
-                </table>
+            <div class="qtd">
+                <label for="qtd">Quantidade</label>
+                <input type="number" name="" id="qtd">
             </div>
-        </main>
+            <div class="preco-unitario">
+                <label>Preço Unitário</label>
+                <input type="text" name="" id="vlr-unitario" readonly>
+            </div>
+            <div class="valor-final">
+                <label>Total</label>
+                <input type="text" name="" id="vlr-final" readonly>
+            </div>
+            <div class="botoes">
+                <button onclick="inserirItem()">Inserir</button>
+                <button>Remover</button>
+                <button>Finalizar</button>
+            </div>
+        </div>
+    </main>
+    <div class="box-itens">
+        <h2>Valor total: </h2>
+        <table id="tabela-item">
+            <thead>
+                <tr>
+                    <th class="title" colspan="6">Itens</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="subtitle">
+                    <th>Id</th>
+                    <th>Nome</th>
+                    <th>Qtd</th>
+                    <th>Vlr Unit</th>
+                    <th>Sub total</th>
+                </tr>
+            </tbody>
+        </table>
     </div>
 
 
