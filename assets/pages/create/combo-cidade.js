@@ -8,7 +8,6 @@ function get(url) {
 function buscaCidades(){
     let select = document.getElementById('state');
     var id = select.options[select.selectedIndex].value;
-    console.log(`vlr de id e : ${id}`)
 
     data = get(`http://127.0.0.1:8080/cidades/${id}`)
     let cidades = JSON.parse(data)
@@ -24,6 +23,7 @@ function criarOption(cidade) {
 }
 
 function preencheCidade() {
+    $("#city").empty();
     var select = document.getElementById("city")
     let cidades = buscaCidades()
 

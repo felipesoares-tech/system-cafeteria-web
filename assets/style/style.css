@@ -175,6 +175,13 @@ body{
     padding: 1em;
 }
 
+.container-form form select{
+    height: 25px;
+    width: 25em;
+    margin-bottom: 0.8em;
+}
+
+
 .container-form form input:hover{
     outline: 1px solid rgb(32, 68, 201);
 }
@@ -307,4 +314,14 @@ main{
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.state-city{
+    display: flex;
+    justify-content: center;
+}
+
+.state-city div{
+    display: flex;
+    flex-direction: column;
 }
