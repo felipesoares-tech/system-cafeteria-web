@@ -41,7 +41,7 @@
             <label>Endereço</label>
             <div>
                 <label for="state">Estado</label>
-                <select name="state" id="state"></select>
+                <select name="state" id="state" onchange="preencheCidade()"></select>
 
                 <label for="city">Cidade</label>
                 <select name="city" id="city"></select>
@@ -52,6 +52,7 @@
         </form>
         <script src="masks.js"></script>
         <script src="combo-estado.js"></script>
+        <script src="combo-cidade.js"></script>
     </main>
 </body>
 </html>

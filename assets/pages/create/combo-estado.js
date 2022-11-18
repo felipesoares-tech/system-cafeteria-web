@@ -15,7 +15,7 @@ function criarOption(estado) {
     let option = document.createElement("option")
 
     option.setAttribute('value', `${estado.id}`);
-    text = document.createTextNode(`${estado.nome.toUpperCase()}`)
+    text = document.createTextNode(`${estado.uf.toUpperCase()}`)
     option.appendChild(text)
 
     return option;
