@@ -6,7 +6,7 @@ function get(url) {
 }
 
 function buscaEstados(){
-    data = get('http://127.0.0.1:8080/estados/')
+    data = get('http://127.0.0.1:8080/state/')
     let estados = JSON.parse(data)
     return estados
 }

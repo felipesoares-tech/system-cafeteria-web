@@ -38,7 +38,7 @@ function criarLinha(usuario){
 }
 
 function main(){
-    data = get("http://127.0.0.1:8080/clientes")
+    data = get("http://127.0.0.1:8080/client")
     usuarios = JSON.parse(data)
 
     let tabela = document.getElementById("tabela")

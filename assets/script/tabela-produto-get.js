@@ -30,7 +30,7 @@ function criarLinha(produto){
 }
 
 function main(){
-    data = get("http://127.0.0.1:8080/produtos")
+    data = get("http://127.0.0.1:8080/product")
     produtos = JSON.parse(data)
 
     let tabela = document.getElementById("tabela")

@@ -9,7 +9,7 @@ function buscaCidades(){
     let select = document.getElementById('state');
     var id = select.options[select.selectedIndex].value;
 
-    data = get(`http://127.0.0.1:8080/cidades/${id}`)
+    data = get(`http://127.0.0.1:8080/city/${id}`)
     let cidades = JSON.parse(data)
     return cidades
 }

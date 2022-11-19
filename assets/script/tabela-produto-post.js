@@ -18,7 +18,7 @@ function post(url, body){
 
 function cadastrarProduto(){
     event.preventDefault()
-    let url = "http://127.0.0.1:8080/produtos"
+    let url = "http://127.0.0.1:8080/product"
     let descricao = document.getElementById("descricao").value
     let quantidade = document.getElementById("quantidade").value
     let valorUnitario = document.getElementById("valor").value

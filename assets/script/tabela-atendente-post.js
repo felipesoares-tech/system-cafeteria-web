@@ -23,7 +23,7 @@ function post(url, body){
 
 function cadastrarCliente(){
     event.preventDefault()
-    let url = "http://127.0.0.1:8080/atendentes"
+    let url = "http://127.0.0.1:8080/attendant"
     let nome = document.getElementById("name").value
     let cpf = document.getElementById("cpf").value
     let email = document.getElementById("mail").value

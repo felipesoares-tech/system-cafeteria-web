@@ -41,7 +41,7 @@ function inserirItem(){
     let tabela = document.getElementById("tabela-item")
     let select = document.getElementById('combo-produto')
     let id = select.value
-    data = get(`http://127.0.0.1:8080/produtos/${id}`)
+    data = get(`http://127.0.0.1:8080/product/${id}`)
     let produto = JSON.parse(data)
     let linha = criarLinha(produto)
     if(linha != -1)

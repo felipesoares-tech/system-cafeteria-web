@@ -18,22 +18,22 @@ function criarOption(produto) {
 }
 
 function main() {
-    data = get("http://127.0.0.1:8080/produtos")
-    produtos = JSON.parse(data)
+    data = get("http://127.0.0.1:8080/product")
+    product = JSON.parse(data)
     let select = document.getElementById("combo-produto")
-    produtos.forEach(element => {
+    product.forEach(element => {
         let option = criarOption(element)
         select.appendChild(option)
     })
 }
 
 function buscaPreco(id){
-    data = get(`http://127.0.0.1:8080/produtos/${id}`)
+    data = get(`http://127.0.0.1:8080/product/${id}`)
     let produto = JSON.parse(data)
     return produto.valorUnitario
 }
 function buscaQtd(id){
-    data = get(`http://127.0.0.1:8080/produtos/${id}`)
+    data = get(`http://127.0.0.1:8080/product/${id}`)
     let produto = JSON.parse(data)
     return produto.quantidade
 }
