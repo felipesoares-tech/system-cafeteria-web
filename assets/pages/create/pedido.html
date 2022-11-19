@@ -43,7 +43,7 @@
             </div>
             <div class="botoes">
                 <button onclick="inserirItem()">Inserir</button>
-                <button>Remover</button>
+                <button onclick="removerItem()">Remover</button>
                 <button>Finalizar</button>
             </div>
         </div>
@@ -56,7 +56,7 @@
                     <th class="title" colspan="6">Itens</th>
                 </tr>
             </thead>
-            <tbody>
+            <tbody id="body-tabela">
                 <tr class="subtitle">
                     <th>Id</th>
                     <th>Nome</th>
@@ -68,7 +68,7 @@
         </table>
     </div>
 
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
     <script src="combo-produto-get.js"></script>
     <script src="inserir-item.js"></script>
 </body>

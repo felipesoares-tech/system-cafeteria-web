@@ -111,7 +111,7 @@ body{
 }
 
 #tabela-item{
-    max-width: 50%;
+    max-width: 60%;
 }
 
 #tabela,td{
@@ -130,10 +130,11 @@ body{
 #tabela tr th{
     font-weight: normal;
 }
-.row:hover{
-    background-color:#93a8ac;
 
-}
+[class*="row"]:hover {
+    background-color:#93a8ac;
+  }
+
 #tabela{
     background-color:#424B54;
     box-shadow: 15px 15px 10px 5px rgba(4, 5, 10, 0.438);  
