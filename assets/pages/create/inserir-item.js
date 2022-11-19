@@ -5,15 +5,19 @@ function get(url) {
     return request.responseText
 }
 
-function marcarCheckBox(id,el) {
+var sumAux = 0;
+
+function marcarCheckBox(id, el, vlr) {
     let checkBox = document.getElementById(id)
     if (!checkBox.checked) {
         checkBox.checked = true
-        el.setAttribute('style','background-color:#93a8ac;')
+        el.setAttribute('style', 'background-color:#93a8ac;')
+        sumAux = sumAux + parseFloat(vlr);
     }
     else {
         checkBox.checked = false
         el.removeAttribute('style')
+        sumAux = sumAux - parseFloat(vlr);
     }
 }
 
@@ -48,6 +52,7 @@ function criarLinha(produto, idCheck) {
     return linha
 }
 var cont = 0;
+var soma = 0;
 function inserirItem() {
 
     let tabelaBody = document.getElementById("body-tabela")
@@ -59,19 +64,23 @@ function inserirItem() {
     let checkBox = document.createElement('input')
     checkBox.type = 'checkbox'
     checkBox.id = id + '-chk' + cont
-    checkBox.setAttribute('style','display: none;')
+    checkBox.setAttribute('style', 'display: none;')
 
-
+    let valorTotal = document.getElementById('vlr-final')
     let linha = criarLinha(produto, checkBox.id)
 
-
-
     if (linha != -1) {
-        linha.setAttribute('onclick', `marcarCheckBox('${checkBox.id}',this)`)
+        linha.setAttribute('onclick', `marcarCheckBox('${checkBox.id}',this,'${valorTotal.value}')`)
         tabelaBody.appendChild(checkBox)
         tabelaBody.appendChild(linha)
         cont += 1
+        let subTotal = document.getElementById('vlr-final')
+        soma = soma + parseFloat(subTotal.value);
+
+        let vlrTotal = document.getElementById('vlr-total')
+        vlrTotal.innerHTML = soma;
     }
+
 
 }
 
@@ -81,4 +90,11 @@ function removerItem() {
         $(`[id=${$(this).attr("id")}]`).remove();
         $(`[class='row${$(this).attr("id")}']`).remove();
     });
+
+    let vlrTotal = document.getElementById('vlr-total')
+    soma = soma - sumAux
+    vlrTotal.innerHTML = soma
+    sumAux = 0
+
+
 }
