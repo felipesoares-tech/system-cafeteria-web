@@ -18,7 +18,9 @@ body{
 .container-crud div{
     background-color: #fff;
     padding: 20px;
-    display: inline-block;
+    display: flex;
+    flex-direction: column;
+    min-width: 25%;
     text-align: center;
     border-radius: 10px;
     box-shadow: 0px 2px 20px -5px rgb(4, 5, 10);
@@ -27,8 +29,8 @@ body{
 }
 .container-crud div button{
     margin-bottom: 5px;
-    height: 4em;
-    width: 6.5em;
+    height: 3.3em;
+    width: 22.5em;
     border-radius: 0.7em;
     border: 0;
     background-color: rgb(68, 79, 117);
