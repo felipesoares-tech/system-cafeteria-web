@@ -5,6 +5,7 @@ if(localStorage.getItem('token') == null){
 
 function logout(){
     localStorage.removeItem('token')
+    localStorage.removeItem('loggedUser')
     window.location.href = 'http://127.0.0.1:5500/login.html'
 }
 
