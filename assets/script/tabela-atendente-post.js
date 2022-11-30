@@ -27,6 +27,7 @@ function cadastrarCliente(){
     let nome = document.getElementById("name").value
     let cpf = document.getElementById("cpf").value
     let email = document.getElementById("mail").value
+    let senha = document.getElementById('senha').value
     let telefone = document.getElementById("tel").value
     let dataNascimento = document.getElementById("date").value
 
@@ -38,6 +39,7 @@ function cadastrarCliente(){
     "nome":nome,
     "telefone":numTelefone,
     "email":email,
+    "senha":senha,
     "dataNascimento":dataNascimento
     }
 

@@ -13,13 +13,29 @@
     <header>
         <div class="container-menu">
             <ul class="menu">
-                <li class="li-container-img"><a href="#"><img src="assets/img/logo-menu.png" alt="logo sistema"></a></li>
-                <li><a href="#">Home</a></li=>
-                <li><a href="#">Sobre</a></li=>
-                <li><a href="#">Contato</a></li=>
-             </ul>
+                <li class="li-container-img"><a href="#"><img src="assets/img/logo-menu.png" alt="logo sistema"></a>
+                </li>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Sobre</a></li>
+                <li><a href="#">Contato</a></li>
+            </ul>
+
+            <div class="usuario-logado">
+                <ul class="container-user-logado">
+                    <img onclick="menuLogin()" src="https://www.tomasvasquez.com.br/blog/wp-content/uploads/2010/03/personal_information_98356.jpg"
+                            alt="">
+                        <ul id="login-itens" class="sub-menu-login">
+                            <li id="logged"></li>
+                            <li><button onclick="logout()">sair</button></li>
+                        </ul>
+                </ul>
+
+            </div>
         </div>
     </header>
+
+
+
 
     <section class="container-opcoes">
         <div>
@@ -55,6 +71,7 @@
             </a>
         </div>
     </section>
+    <script src="index_validation.js"></script>
 </body>
 
 </html>

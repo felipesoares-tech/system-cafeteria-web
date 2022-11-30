@@ -326,3 +326,44 @@ main{
     display: flex;
     flex-direction: column;
 }
+
+.container-menu div{
+    display: flex;
+    flex-direction: column;
+}
+
+
+.usuario-logado img{
+    margin-top: 8px;
+    height: 60px;
+    border-radius: 30px;
+    cursor: pointer;
+}
+
+.usuario-logado{
+    position: absolute;
+    right: 0;
+    margin-top: 16px;
+    margin-right: 16px;
+}
+
+.container-user-logado{
+    display: flex;
+}
+
+.sub-menu-login{
+    background-color: #111822;
+    color: #fff;
+    padding: 15px;
+    list-style: none;
+    display: none;
+}
+
+.sub-menu-login li button{
+    padding: 2px;
+    width: 50px;
+}
+
+.sub-menu-login li button:hover{
+    cursor: pointer;
+}
