@@ -22,12 +22,13 @@
 
             <div class="usuario-logado">
                 <ul class="container-user-logado">
-                    <img onclick="menuLogin()" src="https://www.tomasvasquez.com.br/blog/wp-content/uploads/2010/03/personal_information_98356.jpg"
-                            alt="">
-                        <ul id="login-itens" class="sub-menu-login">
-                            <li id="logged"></li>
-                            <li><button onclick="logout()">sair</button></li>
-                        </ul>
+                    <img onclick="menuLogin()"
+                        src="https://www.tomasvasquez.com.br/blog/wp-content/uploads/2010/03/personal_information_98356.jpg"
+                        alt="">
+                    <ul id="login-itens" class="sub-menu-login">
+                        <li id="logged"></li>
+                        <li><button onclick="logout()">sair</button></li>
+                    </ul>
                 </ul>
 
             </div>
@@ -35,7 +36,6 @@
     </header>
 
     <main class="container-form">
-        <script src="../../script/tabela-cliente-post.js"></script>
         <h2>Cadastro de Cliente</h2>
         <form onsubmit="cadastrarCliente()" id="form-produtos">
             <label for="name">Nome</label>
@@ -59,13 +59,13 @@
             <label for="city">Cidade</label>
             <select name="city" id="city"></select>
             <input type="submit" value="Cadastrar">
-
         </form>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-        <script src="masks.js"></script>
-        <script src="combo-estado.js"></script>
-        <script src="combo-cidade.js"></script>
     </main>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src="../../script/tabela-cliente-post.js"></script>
+    <script src="scripts/masks.js"></script>
+    <script src="scripts/combo-estado.js"></script>
+    <script src="scripts/combo-cidade.js"></script>
     <script src="../../../index_validation.js"></script>
 </body>
 
