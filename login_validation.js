@@ -7,6 +7,7 @@ function get(url){
 
 let form = document.getElementById('form-login')
 let submit = document.getElementById('btn-login')
+var chk = 0
 
 
 function logar(){
@@ -32,16 +33,16 @@ function logar(){
                 nome: item.nome,
                 senha: item.senha
             }
+            chk = 1
         }
     })
 
-    if(login == userValid.email && senha == userValid.senha){
+    if(login == userValid.email && senha == userValid.senha && chk == 1){
         window.location.href = 'http://127.0.0.1:5500/index.html'
-
         let token = Math.random().toString(16).substr(2) + Math.random().toString(16).substr(2)
         localStorage.setItem('token',token)
-
         localStorage.setItem('loggedUser', JSON.stringify(userValid))
+        chk = 0
     }else{
         alert('Deu errado')
     }
