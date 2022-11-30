@@ -19,6 +19,7 @@ function logar(){
     let userValid = {
         email: '',
         nome:'',
+        id:'',
         senha:''
     }
 
@@ -31,6 +32,7 @@ function logar(){
             userValid = {
                 email: item.email,
                 nome: item.nome,
+                id: item.id,
                 senha: item.senha
             }
             chk = 1
