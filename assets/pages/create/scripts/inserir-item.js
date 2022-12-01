@@ -1,3 +1,8 @@
+var listItem = []
+
+
+
+
 function get(url) {
     let request = new XMLHttpRequest()
     request.open("GET", url, false)
@@ -43,6 +48,17 @@ function criarLinha(produto, idCheck) {
     tdValorUnitario.innerHTML = produto.valorUnitario
     tdSubTotal.innerHTML = valorTotal.value
 
+    listItem.push(
+        {
+            qtd: quantidade.value,
+            product: produto,
+            vlrTotal: valorTotal.value,
+            order: null
+        }
+    )
+
+
+
     linha.appendChild(tdId)
     linha.appendChild(tdNome)
     linha.appendChild(tdQuantidade)
@@ -81,7 +97,7 @@ function inserirItem() {
         vlrTotal.innerHTML = soma;
     }
 
-
+    console.log(listItem)
 }
 
 function removerItem() {

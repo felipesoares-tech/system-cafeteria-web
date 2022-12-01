@@ -25,8 +25,6 @@ function preencheClient() {
     var select = document.getElementById("client")
     let clients = buscacliente()
 
-    console.log(clients)
-
     clients.forEach(element => {
         let option = criarOption(element)
         select.appendChild(option)

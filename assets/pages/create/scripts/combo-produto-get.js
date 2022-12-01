@@ -6,7 +6,6 @@ function get(url) {
 }
 
 function criarOption(produto) {
-    console.log(produto)
     let option = document.createElement("option")
 
     option.setAttribute('value', `${produto.id}`);
