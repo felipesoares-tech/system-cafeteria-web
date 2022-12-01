@@ -1,3 +1,5 @@
+var contOrder = 0
+
 function get(url) {
     let request = new XMLHttpRequest()
     request.open("GET", url, false)
@@ -5,16 +7,15 @@ function get(url) {
     return request.responseText
 }
 
-function post(url, body){
-    console.log("Body=",body)
+function post(url, body) {
+    console.log("Body=", body)
     let request = new XMLHttpRequest()
-    request.open("POST",url,true)
-    request.setRequestHeader("Content-type","application/json")
+    request.open("POST", url, true)
+    request.setRequestHeader("Content-type", "application/json")
     request.responseType = 'json'
     request.send(JSON.stringify(body))
-}
 
-var contOrder = 0
+}
 
 function finalizarPedido() {
     let dataAttendant = get(`http://127.0.0.1:8080/attendant/${loggedUser.id}`)
@@ -25,29 +26,31 @@ function finalizarPedido() {
 
     let attendantObj = JSON.parse(dataAttendant)
     let clientObj = ''
-    if(dataClient != null)
+    if (dataClient != null)
         clientObj = JSON.parse(dataClient)
     else
         clientObj = null
 
-    order = {
-        id: contOrder,
+    let order = {
         client: clientObj,
         attendant: attendantObj
     }
 
-    post('http://127.0.0.1:8080/order/',order)
+    post('http://127.0.0.1:8080/order/', order)
 
-    listItem.forEach((item) =>{
-        if(item != null)
-            item.order = order
+    
+    
+    /*listItem.forEach((item) => {
+        item.order = order
+        console.log(item)
     })
 
-   
-    listItem.forEach((item)=>{
-        if(item != null)
-            post('http://127.0.0.1:8080/item/',item)
-    })
+
+    listItem.forEach((item) => {
+        if (item != null)
+            post('http://127.0.0.1:8080/item/', item)
+    })*/
 
     contOrder += 1
+
 }

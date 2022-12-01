@@ -1,8 +1,5 @@
 var listItem = []
 
-
-
-
 function get(url) {
     let request = new XMLHttpRequest()
     request.open("GET", url, false)
