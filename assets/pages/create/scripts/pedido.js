@@ -30,46 +30,50 @@ async function post2(url, init) {
 
 
 function finalizarPedido() {
-    let dataAttendant = get(`http://127.0.0.1:8080/attendant/${loggedUser.id}`)
-    var select = document.getElementById('client')
-    var clientId = select.options[select.selectedIndex].value
-    let dataClient = ''
-    clientId != 'x' ? dataClient = get(`http://127.0.0.1:8080/client/${clientId}`) : dataClient = null
+    if(listItem.length > 0){
+        let dataAttendant = get(`http://127.0.0.1:8080/attendant/${loggedUser.id}`)
+        var select = document.getElementById('client')
+        var clientId = select.options[select.selectedIndex].value
+        let dataClient = ''
+        clientId != 'x' ? dataClient = get(`http://127.0.0.1:8080/client/${clientId}`) : dataClient = null
+    
+        let attendantObj = JSON.parse(dataAttendant)
+        let clientObj = ''
+        if (dataClient != null)
+            clientObj = JSON.parse(dataClient)
+        else
+            clientObj = null
+    
+        let order = {
+            client: clientObj,
+            attendant: attendantObj
+        }
+    
+        const init = {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(order)
+        }
+    
+        const cadastrarItemsPedidos = async () => {
+            const orderObj = await post2('http://127.0.0.1:8080/order/', init)
+            listItem.forEach((item) => {
+                item.order = orderObj
+                post('http://127.0.0.1:8080/item/',item)
+                
+            })
+            location.reload()
+        }
+    
+        cadastrarItemsPedidos()
+    
+        let formPedido = document.querySelector('.box-pedido')
+        formPedido.reset()
 
-    let attendantObj = JSON.parse(dataAttendant)
-    let clientObj = ''
-    if (dataClient != null)
-        clientObj = JSON.parse(dataClient)
-    else
-        clientObj = null
-
-    let order = {
-        client: clientObj,
-        attendant: attendantObj
-    }
-
-    const init = {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(order)
-    }
-
-    const cadastrarItemsPedidos = async () => {
-        const orderObj = await post2('http://127.0.0.1:8080/order/', init)
-        listItem.forEach((item) => {
-            item.order = orderObj
-            post('http://127.0.0.1:8080/item/',item)
-            
-        })
-        location.reload()
-    }
-
-    cadastrarItemsPedidos()
-
-    let formPedido = document.querySelector('.box-pedido')
-    formPedido.reset()
+    }else
+        alert('Insira pelomenos um item!')
 
 }
 

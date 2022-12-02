@@ -96,22 +96,27 @@ function inserirItem() {
 }
 
 function removerItem() {
-    $("input:checked").each(function () {
-        let row = document.getElementById($(this).attr("id")).nextSibling
-  
-        const index = listItem.map(e => e.product.nome).indexOf(row.cells[1].innerHTML)
-        if (index > -1) { // only splice array when item is found
-            listItem.splice(index, 1); // 2nd parameter means remove one item only
-          }
+    if(listItem.length > 0){
+        $("input:checked").each(function () {
+            let row = document.getElementById($(this).attr("id")).nextSibling
+      
+            const index = listItem.map(e => e.product.nome).indexOf(row.cells[1].innerHTML)
+            if (index > -1) { // only splice array when item is found
+                listItem.splice(index, 1); // 2nd parameter means remove one item only
+              }
+    
+    
+            $(`[id=${$(this).attr("id")}]`).remove();
+            $(`[class='row${$(this).attr("id")}']`).remove();
+        });
+    
+        let vlrTotal = document.getElementById('vlr-total')
+        soma = soma - sumAux
+        vlrTotal.innerHTML = soma
+        sumAux = 0
+    }else
+        alert('Não há itens a serem removidos!')
 
 
-        $(`[id=${$(this).attr("id")}]`).remove();
-        $(`[class='row${$(this).attr("id")}']`).remove();
-    });
-
-    let vlrTotal = document.getElementById('vlr-total')
-    soma = soma - sumAux
-    vlrTotal.innerHTML = soma
-    sumAux = 0
     
 }
