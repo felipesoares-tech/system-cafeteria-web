@@ -1,4 +1,4 @@
-var listItem = []
+var listItem = [] //variável para armazenar os os itens criados!
 
 function get(url) {
     let request = new XMLHttpRequest()
@@ -9,7 +9,7 @@ function get(url) {
 
 var sumAux = 0;
 
-function marcarCheckBox(id, el, vlr) {
+function marcarCheckBox(id, el, vlr) { // function responsável por "selecionar" os itens quando clicados
     let checkBox = document.getElementById(id)
     if (!checkBox.checked) {
         checkBox.checked = true
@@ -23,7 +23,7 @@ function marcarCheckBox(id, el, vlr) {
     }
 }
 
-function criarLinha(produto, idCheck) {
+function criarLinha(produto, idCheck) { //function responsável por criar a linha da tabela de itens
     linha = document.createElement("tr")
     tdId = document.createElement("td")
     tdNome = document.createElement("td")
@@ -34,7 +34,7 @@ function criarLinha(produto, idCheck) {
     let quantidade = document.getElementById('qtd')
     let valorTotal = document.getElementById('vlr-final')
 
-    if (quantidade.value < 1) {
+    if (quantidade.value < 1) { //Verifica se o usuário informou a quantidade do produto informado.
         alert('Informe a quantidade!')
         return -1
     }
@@ -45,12 +45,12 @@ function criarLinha(produto, idCheck) {
     tdValorUnitario.innerHTML = produto.valorUnitario
     tdSubTotal.innerHTML = valorTotal.value
 
-    listItem.push(
+    listItem.push( //Inserção de item na lista de itens
         {
             qtd: quantidade.value,
             product: produto,
             vlrTotal: valorTotal.value,
-            order: null
+            order: null //Visto que o pedido ainda não foi finalizado, então não será possível atribuir um pedido.
         }
     )
 
@@ -64,13 +64,14 @@ function criarLinha(produto, idCheck) {
 }
 var cont = 0;
 var soma = 0;
-function inserirItem() {
+
+function inserirItem() { // Function responsável pela criação de itens
 
     let tabelaBody = document.getElementById("body-tabela")
-    let select = document.getElementById('combo-produto')
-    let id = select.value
-    data = get(`http://127.0.0.1:8080/product/${id}`)
-    let produto = JSON.parse(data)
+    let select = document.getElementById('combo-produto') // Seleciona o select que possui todos os produtos da lanchonete
+    let id = select.value // recupera o id do produto selecionado
+    let data = get(`http://127.0.0.1:8080/product/${id}`)
+    let produto = JSON.parse(data) // recupera o produto selecionado
 
     let checkBox = document.createElement('input')
     checkBox.type = 'checkbox'
@@ -80,7 +81,7 @@ function inserirItem() {
     let valorTotal = document.getElementById('vlr-final')
     let linha = criarLinha(produto, checkBox.id)
 
-    if (linha != -1) {
+    if (linha != -1) { // se a linha foi criada com sucesso, então será adicionada na tabela
         linha.setAttribute('onclick', `marcarCheckBox('${checkBox.id}',this,'${valorTotal.value}')`)
         tabelaBody.appendChild(checkBox)
         tabelaBody.appendChild(linha)
@@ -96,19 +97,18 @@ function inserirItem() {
 }
 
 function removerItem() {
-    if(listItem.length > 0){
-        $("input:checked").each(function () {
-            let row = document.getElementById($(this).attr("id")).nextSibling
+    if(listItem.length > 0){ // condição para remover somente se possuir itens na lista!
+        $("input:checked").each(function () { //Utilizando JQUERY para pegar todos o inputs que estão selecionados
+            let row = document.getElementById($(this).attr("id")).nextSibling //Selecionando o elemento "tr" do html para acessar os dados do item que está selecionado
       
-            const index = listItem.map(e => e.product.nome).indexOf(row.cells[1].innerHTML)
-            if (index > -1) { // only splice array when item is found
-                listItem.splice(index, 1); // 2nd parameter means remove one item only
+            const index = listItem.map(e => e.product.nome).indexOf(row.cells[1].innerHTML) //utilizando da função de map para buscar a posição que se encontrar o elemento clicado a partir de seu nome
+            if (index > -1) { // se o index é diferente de -1, então foi possível encontrar o item
+                listItem.splice(index, 1) // segundo parâmetro, significa remover 1 item apenas
               }
     
-    
-            $(`[id=${$(this).attr("id")}]`).remove();
-            $(`[class='row${$(this).attr("id")}']`).remove();
-        });
+            $(`[id=${$(this).attr("id")}]`).remove() //remove o input
+            $(`[class='row${$(this).attr("id")}']`).remove() // remove a linha
+        })
     
         let vlrTotal = document.getElementById('vlr-total')
         soma = soma - sumAux
@@ -116,5 +116,4 @@ function removerItem() {
         sumAux = 0
     }else
         alert('Não há itens a serem removidos!')
-
 }
