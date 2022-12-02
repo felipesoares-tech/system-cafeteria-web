@@ -51,12 +51,21 @@
             
             <label for="date">Data de Nascimento</label>
             <input type="date" name="date" id="date" required>
+
+            <label for="state">Estado</label>
+            <select name="state" id="state" onchange="preencheCidade()"></select>
+
+            <label for="city">Cidade</label>
+            <select name="city" id="city"></select>
             
             <input type="submit" value="Cadastrar">
         </form>
-        <script src="masks.js"></script>
+        
     </main>
-    <script src="../../../index_validation.js"></script>
+    <script src="../../../assets/script/login/logout.js"></script>
     <script src="../../script/request/post/tabela-atendente-post.js"></script>
+    <script src="../../script/request/get/select/select-cliente-estado.js"></script>
+    <script src="../../script/request/get/select/select-cliente-cidade.js"></script>
+    <script src="../../script/other/masks.js"></script>
 </body>
 </html>

@@ -24,7 +24,6 @@ function cadastrarCliente(){
     let url = "http://127.0.0.1:8080/client"
     let nome = document.getElementById("name").value
     let cpf = document.getElementById("cpf").value
-    let email = document.getElementById("mail").value
     let telefone = document.getElementById("tel").value
     let dataNascimento = document.getElementById("date").value
     
@@ -35,7 +34,6 @@ function cadastrarCliente(){
     "cpf":numCpf,
     "nome":nome,
     "telefone":numTelefone,
-    "email":email,
     "dataNascimento":dataNascimento
     }
 
