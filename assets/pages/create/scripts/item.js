@@ -117,6 +117,4 @@ function removerItem() {
     }else
         alert('Não há itens a serem removidos!')
 
-
-    
 }
