@@ -4,15 +4,15 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PEDIDOS</title>
-    <link rel="stylesheet" href="../../style/style.css">
+    <title>Document</title>
+    <link rel="stylesheet" href="../../../../style/style.css">
 </head>
 <body>
     <header>
         <div class="container-menu">
             <ul class="menu">
-                <li class="li-container-img"><a href="#"><img src="../../../assets/img/logo-menu.png" alt="logo sistema"></a></li>
-                <li><a href="../../../index.html">Home</a></li=>
+                <li class="li-container-img"><a href="#"><img src="../../../../../assets/img/logo-menu.png" alt="logo sistema"></a></li>
+                <li><a href="../../../../../index.html">Home</a></li=>
                 <li><a href="#">Sobre</a></li=>
                 <li><a href="#">Contato</a></li=>
              </ul>
@@ -26,29 +26,27 @@
                             <li><button onclick="logout()">sair</button></li>
                         </ul>
                 </ul>
-
             </div>
         </div>
     </header>
 
-    <section class="container-crud">
-        <div>
-            <h2>OPERAÇÕES</h2>
-            <a href="order/all-order/orders.html">
-                <button>LISTAR - TODOS</button>
-            </a>
-            <a href="order/order-by/attendant.html">
-                <button>LISTAR POR ATENDENTE</button>
-            </a>
-            <a href="order/order-by/client.html">
-                <button>LISTAR POR CLIENTE</button>
-            </a>
-        </div>
-        <a href="../choices/choices-crud-pedido.html">
-            <button class="btn-voltar">VOLTAR</button>
-        </a>
-    </section>
-
-    <script src="../../../index_validation.js"></script>
+    <main class="container-table">
+        <table id="tabela">
+            <thead>
+                <tr>
+                    <th class="title" colspan="6">Pedidos</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="subtitle">
+                    <th>Id</th>
+                    <th>Atendente</th>
+                    <th>Cliente</th>
+                    <th></th>
+                </tr>
+            </tbody>
+        </table>
+    </main>
+    <script src="table-order-get.js"></script>
 </body>
 </html>

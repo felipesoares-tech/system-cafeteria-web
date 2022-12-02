@@ -54,8 +54,6 @@ function criarLinha(produto, idCheck) {
         }
     )
 
-
-
     linha.appendChild(tdId)
     linha.appendChild(tdNome)
     linha.appendChild(tdQuantidade)
@@ -99,7 +97,14 @@ function inserirItem() {
 
 function removerItem() {
     $("input:checked").each(function () {
-        console.log($(this).attr("id"));
+        let row = document.getElementById($(this).attr("id")).nextSibling
+  
+        const index = listItem.map(e => e.product.nome).indexOf(row.cells[1].innerHTML)
+        if (index > -1) { // only splice array when item is found
+            listItem.splice(index, 1); // 2nd parameter means remove one item only
+          }
+
+
         $(`[id=${$(this).attr("id")}]`).remove();
         $(`[class='row${$(this).attr("id")}']`).remove();
     });
@@ -108,6 +113,5 @@ function removerItem() {
     soma = soma - sumAux
     vlrTotal.innerHTML = soma
     sumAux = 0
-
-
+    
 }

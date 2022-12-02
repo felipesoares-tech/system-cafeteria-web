@@ -35,7 +35,7 @@
         </div>
     </header>
     <main>
-        <div class="box-pedido">
+        <form class="box-pedido">
             <div class="descricao">
                 <label for="combo-produto">Produto</label>
                 <select id="combo-produto">
@@ -54,11 +54,11 @@
                 <input type="text" name="" id="vlr-final" readonly>
             </div>
             <div class="botoes">
-                <button onclick="inserirItem()">Inserir</button>
-                <button onclick="removerItem()">Remover</button>
-                <button onclick="finalizarPedido()">Finalizar</button>
+                <button type="button" onclick="inserirItem()">Inserir</button>
+                <button type="button" onclick="removerItem()">Remover</button>
+                <button type="button" onclick="finalizarPedido()">Finalizar</button>
             </div>
-        </div>
+        </form>
     </main>
     <div class="box-itens">
         <h2>Valor total: <p id="vlr-total"></p></h2>

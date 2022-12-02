@@ -1,4 +1,5 @@
 var contOrder = 0
+var serverResponse = {}
 
 function get(url) {
     let request = new XMLHttpRequest()
@@ -9,13 +10,24 @@ function get(url) {
 
 function post(url, body) {
     console.log("Body=", body)
-    let request = new XMLHttpRequest()
+    var request = new XMLHttpRequest()
     request.open("POST", url, true)
     request.setRequestHeader("Content-type", "application/json")
     request.responseType = 'json'
     request.send(JSON.stringify(body))
 
 }
+
+async function post2(url, init) {
+    const response = await fetch(url, init)
+    const data = await response.json()
+
+    return data
+}
+
+
+
+
 
 function finalizarPedido() {
     let dataAttendant = get(`http://127.0.0.1:8080/attendant/${loggedUser.id}`)
@@ -36,21 +48,30 @@ function finalizarPedido() {
         attendant: attendantObj
     }
 
-    post('http://127.0.0.1:8080/order/', order)
+    const init = {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(order)
+    }
 
-    
-    
-    /*listItem.forEach((item) => {
-        item.order = order
-        console.log(item)
-    })
+    const cadastrarItemsPedidos = async () => {
+        const orderObj = await post2('http://127.0.0.1:8080/order/', init)
+        listItem.forEach((item) => {
+            item.order = orderObj
+            post('http://127.0.0.1:8080/item/',item)
+            
+        })
+        location.reload()
+    }
 
+    cadastrarItemsPedidos()
 
-    listItem.forEach((item) => {
-        if (item != null)
-            post('http://127.0.0.1:8080/item/', item)
-    })*/
-
-    contOrder += 1
+    let formPedido = document.querySelector('.box-pedido')
+    formPedido.reset()
 
 }
+
+
+
