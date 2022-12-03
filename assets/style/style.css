@@ -342,6 +342,10 @@ main{
     cursor: pointer;
 }
 
+.usuario-logado img:hover{
+    outline: 3px solid rgba(110, 135, 216, 0.692);
+}
+
 .usuario-logado{
     position: absolute;
     right: 0;
