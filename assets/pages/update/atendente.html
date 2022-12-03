@@ -31,6 +31,43 @@
         </div>
     </header>
 
+    <main class="container-form">
+        <h2>Atualizar Atendente</h2>
+        <form onsubmit="atualizarAtendente()" id="form-atendente">
+            <label for="sel-atendente">Selecione o Atendente:</label>
+            <select name="sel-attendant" id="sel-atendente"></select>
+
+            <label for="name">Nome</label>
+            <input type="text" id="name" required>
+            
+            <label for="cpf">CPF</label>
+            <input type="text" id="cpf" maxlength="14" required>
+            
+            <label for="mail">E-mail</label>
+            <input type="email" name="mail" id="mail" required>
+            
+            <label for="senha">Senha</label>
+            <input type="password" name="senha" id="senha" required>
+            
+            <label for="telefone">Telefone</label>
+            <input type="tel" name="tel" id="tel" maxlength="15" required>
+            
+            <label for="date">Data de Nascimento</label>
+            <input type="date" name="date" id="date" required>
+
+            <label for="state">Estado</label>
+            <select name="state" id="state" onchange="preencheCidade()"></select>
+
+            <label for="city">Cidade</label>
+            <select name="city" id="city"></select>
+            
+            <input type="submit" value="Atualizar">
+        </form>
+        
+    </main>
+
     <script src="../../../assets/script/login/logout.js"></script>
+    <script src="../../../assets/script/request/get/select/select-atendente-atendente.js"></script>
+    <script src="../../../assets/script/request/put/tabela-atendente-put.js"></script>
 </body>
 </html>

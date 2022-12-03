@@ -8,22 +8,24 @@ function put(url, body){
 
     request.addEventListener("load", function() {
         if (request.status == 200) 
-            alert('Cliente atualizado com sucesso!')
+            alert('Atendente atualizado com sucesso!')
          else{
             alert(`${request.response.mensagem}`)
          } 
             
     });
-    let form = document.getElementById("form-cliente")
+    let form = document.getElementById("form-atendente")
     form.reset()
 }
 
-function atualizarCliente(){
+function atualizarAtendente(){
     event.preventDefault()
-    let clientId = document.getElementById("sel-cliente").value
-    let url =`http://127.0.0.1:8080/client/${clientId}`
+    let atendenteId = document.getElementById("sel-atendente").value
+    let url =`http://127.0.0.1:8080/attendant/${atendenteId}`
     let nome = document.getElementById("name").value
     let cpf = document.getElementById("cpf").value
+    let email = document.getElementById("mail").value
+    let senha = document.getElementById("senha").value
     let telefone = document.getElementById('tel').value
     let dataNasc = document.getElementById('date').value
     
@@ -34,7 +36,9 @@ function atualizarCliente(){
     "cpf":numCpf,
     "nome":nome,
     "telefone":numTelefone,
-    "dataNascimento":dataNasc
+    "dataNascimento":dataNasc,
+    "email": email,
+    "senha": senha
     }
 
     put(url,body)
