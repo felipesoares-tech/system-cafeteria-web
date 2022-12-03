@@ -16,6 +16,7 @@ function buscaCidades(){
 
 function criarOption(cidade) {
     let option = document.createElement("option")
+    option.setAttribute('value', `${cidade.id}`);
     text = document.createTextNode(`${cidade.nome.toUpperCase()}`)
     option.appendChild(text)
 

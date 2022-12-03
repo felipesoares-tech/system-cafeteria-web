@@ -18,6 +18,13 @@ function put(url, body){
     form.reset()
 }
 
+function get(url) {
+    let request = new XMLHttpRequest()
+    request.open("GET", url, false)
+    request.send()
+    return request.responseText
+}
+
 function atualizarAtendente(){
     event.preventDefault()
     let atendenteId = document.getElementById("sel-atendente").value
@@ -28,6 +35,9 @@ function atualizarAtendente(){
     let senha = document.getElementById("senha").value
     let telefone = document.getElementById('tel').value
     let dataNasc = document.getElementById('date').value
+    let cidadeId = document.getElementById('city').value
+    let data = get(`http://127.0.0.1:8080/city/${cidadeId}`)
+    let cidade = JSON.parse(data)
     
     const numTelefone = telefone.replace(/[^0-9]/g, '')
     const numCpf = cpf.replace(/[^0-9]/g, '')
@@ -38,6 +48,7 @@ function atualizarAtendente(){
     "telefone":numTelefone,
     "dataNascimento":dataNasc,
     "email": email,
+    "cidade": cidade,
     "senha": senha
     }
 

@@ -1,4 +1,3 @@
-
 function post(url, body){
     console.log("Body=",body)
     let request = new XMLHttpRequest()
@@ -17,8 +16,13 @@ function post(url, body){
     });
     let form = document.getElementById("form-produtos")
     form.reset()
+}
 
-    
+function get(url) {
+    let request = new XMLHttpRequest()
+    request.open("GET", url, false)
+    request.send()
+    return request.responseText
 }
 
 function cadastrarCliente(){
@@ -30,7 +34,12 @@ function cadastrarCliente(){
     let senha = document.getElementById('senha').value
     let telefone = document.getElementById("tel").value
     let dataNascimento = document.getElementById("date").value
-
+    let selectCidade = document.getElementById('city')
+    let cidadeId = selectCidade.options[selectCidade.selectedIndex].value
+    
+    let data = get(`http://127.0.0.1:8080/city/${cidadeId}`)
+    let cidade = JSON.parse(data)
+    
     const numTelefone = telefone.replace(/[^0-9]/g, '')
     const numCpf = cpf.replace(/[^0-9]/g, '')
 
@@ -40,7 +49,8 @@ function cadastrarCliente(){
     "telefone":numTelefone,
     "email":email,
     "senha":senha,
-    "dataNascimento":dataNascimento
+    "dataNascimento":dataNascimento,
+    "cidade": cidade
     }
 
     post(url,body)
