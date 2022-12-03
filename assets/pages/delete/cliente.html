@@ -31,6 +31,19 @@
         </div>
     </header>
 
+    <main class="container-form">
+        <h2>Deletar Cliente</h2>
+        <form onsubmit="cadastrarCliente()" id="form-produtos">
+            <label for="sel-cliente">Escolha o cliente</label>
+            <select name="cliente" id="sel-cliente" onchange="preencheCidade()"></select>
+           
+            <input id="btn-del" type="submit" value="Deletar">
+            <input id="btn-vlt" type="submit" value="Voltar">
+        </form>
+        
+    </main>
+
     <script src="../../../assets/script/login/logout.js"></script>
+    <script src="../../script/request/get/select/select-cliente-deletar.js"></script>
 </body>
 </html>

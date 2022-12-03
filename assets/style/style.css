@@ -388,3 +388,7 @@ main{
 .box-client select{
 height: 2em;
 }
+
+#btn-del{
+    margin-bottom: 0px;
+}
