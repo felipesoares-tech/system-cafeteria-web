@@ -31,6 +31,20 @@
         </div>
     </header>
 
+    <main class="container-form">
+        <h2>Deletar Atendente</h2>
+        <form id="form-atendente">
+            <label for="sel-atendente">Escolha o atendente</label>
+            <select name="cliente" id="sel-atendente"></select>
+           
+            <input onclick="deletarAtendente()" id="btn-del" type="submit" value="Deletar">
+            <input id="btn-vlt" type="submit" value="Voltar">
+        </form>
+        
+    </main>
+
     <script src="../../../assets/script/login/logout.js"></script>
+    <script src="../../script/request/get/select/select-atendente-deletar.js"></script>
+    <script src="../../script/request/delete/tabela-atendente-delete.js"></script>
 </body>
 </html>
