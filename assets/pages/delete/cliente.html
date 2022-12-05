@@ -33,11 +33,11 @@
 
     <main class="container-form">
         <h2>Deletar Cliente</h2>
-        <form onsubmit="cadastrarCliente()" id="form-produtos">
+        <form onsubmit="cadastrarCliente()" id="form-cliente">
             <label for="sel-cliente">Escolha o cliente</label>
-            <select name="cliente" id="sel-cliente" onchange="preencheCidade()"></select>
+            <select name="cliente" id="sel-cliente"></select>
            
-            <input id="btn-del" type="submit" value="Deletar">
+            <input onclick="deletarCliente()" id="btn-del" type="submit" value="Deletar">
             <input id="btn-vlt" type="submit" value="Voltar">
         </form>
         
@@ -45,5 +45,6 @@
 
     <script src="../../../assets/script/login/logout.js"></script>
     <script src="../../script/request/get/select/select-cliente-deletar.js"></script>
+    <script src="../../script/request/delete/tabela-cliente-delete.js"></script>
 </body>
 </html>
