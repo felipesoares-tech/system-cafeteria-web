@@ -21,8 +21,6 @@ function criarOption(produto) {
     return option;
 }
 
-
-
 function preencheProduto() {
     var select = document.getElementById("sel-produto")
     let produtos = buscaProdutos()
