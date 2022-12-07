@@ -37,17 +37,17 @@
     <main>
         <form class="box-pedido">
             <div class="descricao">
-                <label for="combo-produto">Produto</label>
-                <select id="combo-produto">
+                <label for="sel-produto">Produto</label>
+                <select id="sel-produto">
                 </select>
             </div>
             <div class="qtd">
                 <label for="qtd">Quantidade</label>
-                <input type="number" name="" id="qtd">
+                <input type="number" name="" id="quantidade">
             </div>
             <div class="preco-unitario">
                 <label>Preço Unitário</label>
-                <input type="text" name="" id="vlr-unitario" readonly>
+                <input type="text" name="" id="valor" readonly>
             </div>
             <div class="valor-final">
                 <label>Total</label>
@@ -82,16 +82,17 @@
 
     <div class="box-client">
         <h2>Cliente</h2>
-        <select name="client" id="client">
+        <select name="client" id="sel-cliente">
             <option value="x" selected>Nenhum</option>
         </select>
     </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-    <script src="../../script/request/get/select/select-pedido-produto-get.js"></script>
+    <script src="../../script/request/get/select/produto/select-produto.js"></script>
+    <script src="../../../assets/script/request/get/select/pedido/preenche-campos.pedido.js"></script>
     <script src="../../script/other/item.js"></script>
     <script src="../../../assets/script/login/logout.js"></script>
-    <script src="../../script/request/get/select/select-pedido-cliente.js"></script>
+    <script src="../../script/request/get/select/cliente/select-cliente-.js"></script>
     <script src="../../script/request/post/tabela-pedido-post.js"></script>
 </body>
 

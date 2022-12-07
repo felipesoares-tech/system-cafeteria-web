@@ -31,7 +31,7 @@ function criarLinha(produto, idCheck) { //function responsável por criar a linh
     tdValorUnitario = document.createElement("td")
     tdSubTotal = document.createElement("td")
 
-    let quantidade = document.getElementById('qtd')
+    let quantidade = document.getElementById('quantidade')
     let valorTotal = document.getElementById('vlr-final')
 
     if (quantidade.value < 1) { //Verifica se o usuário informou a quantidade do produto informado.
@@ -68,7 +68,7 @@ var soma = 0;
 function inserirItem() { // Function responsável pela criação de itens
 
     let tabelaBody = document.getElementById("body-tabela")
-    let select = document.getElementById('combo-produto') // Seleciona o select que possui todos os produtos da lanchonete
+    let select = document.getElementById('sel-produto') // Seleciona o select que possui todos os produtos da lanchonete
     let id = select.value // recupera o id do produto selecionado
     let data = get(`http://127.0.0.1:8080/product/${id}`)
     let produto = JSON.parse(data) // recupera o produto selecionado

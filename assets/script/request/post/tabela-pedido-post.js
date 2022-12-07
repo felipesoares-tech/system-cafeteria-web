@@ -24,7 +24,7 @@ async function post(url, body) {
 function finalizarPedido() {
     if(listItem.length > 0){ //Verifica se possui algum item na lista de itens
         let dataAttendant = get(`http://127.0.0.1:8080/attendant/${loggedUser.id}`)
-        var select = document.getElementById('client')
+        var select = document.getElementById('sel-cliente')
         var clientId = select.options[select.selectedIndex].value // busca o id do cliente que está selecionado no combo box
         let dataClient = null
         clientId != 'x' ? dataClient = get(`http://127.0.0.1:8080/client/${clientId}`) : dataClient = null // se o id que estiver no combo for x, então a opção selecionada é "nenhum cliente" logo, o cliente deverá permanecer nulo
